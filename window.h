@@ -16,10 +16,11 @@ class Window {
         ~Window();
         void DrawWindow();
         void Update();
-        bool shouldClose() {
-            return glfwWindowShouldClose(window_);
-        }
-
+        void SetColor(float a, float b, float c, float d);
+        void Clear(GLbitfield bit_field);
+        bool should_close() { return glfwWindowShouldClose(window_) != 0; }
+        int width() { return  width_; }
+        int height() { return  height_; }
     private:
         int width_;
         int height_;

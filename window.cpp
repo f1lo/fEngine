@@ -2,7 +2,6 @@
 // Created by filo on 1/3/18.
 //
 #include <iostream>
-
 #include "window.h"
 
 Window::Window(int width, int height, const char* title):
@@ -26,7 +25,16 @@ void Window::DrawWindow() {
 }
 
 void Window::Update() {
-    glClear(GL_COLOR_BUFFER_BIT);
     glfwSwapBuffers(window_);
+    glfwGetFramebufferSize(window_, &width_, &height_);
+    glViewport(0, 0, width_, height_);
     glfwPollEvents();
+}
+
+void Window::SetColor(float a, float b, float c, float d) {
+    glClearColor(a, b, c, d);
+}
+
+void Window::Clear(GLbitfield bit_field) {
+    glClear(bit_field);
 }
