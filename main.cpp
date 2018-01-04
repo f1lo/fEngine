@@ -1,7 +1,13 @@
+#include "window.h"
+#include <cstdlib>
 #include <iostream>
-#include <GLFW/glfw3.h>
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+    glfwInit();
+    Window window(1000, 500, "Name");
+    window.DrawWindow();
+    while (!window.shouldClose()) {
+        window.Update();
+    }
+    //system("read -p 'Press Enter to continue...' var");
 }
