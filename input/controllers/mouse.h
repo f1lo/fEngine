@@ -5,15 +5,17 @@
 #ifndef FENGINE_MOUSE_H
 #define FENGINE_MOUSE_H
 
-#include "../input.h"
+#include "../../graphics/window.h"
 
-class Mouse : public Input {
+class Mouse {
     public:
-        Mouse() = default;
+        explicit  Mouse(Window* window);
         ~Mouse() = default;
+    private:
+        static void CursorPositionCallback(GLFWwindow* window, double x, double y);
+        static void MouseButtonCallback(GLFWwindow* glfWwindow, int button, int action, int mods);
 
-        void CursorPositionCallback(GLFWwindow* window, double x, double y) override;
-        void MouseButtonCallback(GLFWwindow* glfWwindow, int button, int action, int mods) override;
+        Window* window_;
 };
 
 

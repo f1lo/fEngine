@@ -1,4 +1,4 @@
-#include "window.h"
+#include "graphics/window.h"
 #include <cstdlib>
 #include <iostream>
 
@@ -11,5 +11,4 @@ int main() {
         window.Clear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         window.Update();
     }
-    //system("read -p 'Press Enter to continue...' var");
 }

@@ -14,6 +14,8 @@ class Window {
 
         Window(int width, int height, const char* title);
         ~Window();
+
+        GLFWwindow* GetGLFWWindow();
         void DrawWindow();
         void Update();
         void SetColor(float a, float b, float c, float d);

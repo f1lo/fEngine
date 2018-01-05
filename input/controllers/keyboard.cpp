@@ -4,7 +4,13 @@
 
 #include "keyboard.h"
 
-int Keyboard::KeyCallback(GLFWwindow *window, int key, int scan_code, int action, int mods) {
+Keyboard::Keyboard(Window* window) :
+        window_(window){
+    glfwSetKeyCallback(window_->GetGLFWWindow(), KeyCallback);
+    glfwSetCharCallback(window_->GetGLFWWindow(), CharacterCallback);
+}
+
+void Keyboard::KeyCallback(GLFWwindow *window, int key, int scan_code, int action, int mods) {
 
 }
 

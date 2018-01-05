@@ -5,14 +5,17 @@
 #ifndef FENGINE_KEYBOARD_H
 #define FENGINE_KEYBOARD_H
 
-#include "../input.h"
+#include "../../graphics/window.h"
 
-class Keyboard : public Input {
+class Keyboard {
     public:
-        Keyboard() = default;
+        explicit Keyboard(Window* window);
         ~Keyboard() = default;
-        int KeyCallback(GLFWwindow* window, int key, int scan_code, int action, int mods) override;
-        void CharacterCallback(GLFWwindow* window, unsigned int character) override ;
+    private:
+
+        static void KeyCallback(GLFWwindow *window, int key, int scan_code, int action, int mods);
+        static void CharacterCallback(GLFWwindow *window, unsigned int character);
+        Window* window_;
 };
 
 
