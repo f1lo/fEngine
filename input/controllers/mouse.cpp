@@ -15,5 +15,4 @@ void Mouse::CursorPositionCallback(GLFWwindow *window, double x, double y) {
 }
 
 void Mouse::MouseButtonCallback(GLFWwindow *glfWwindow, int button, int action, int mods) {
-
 }

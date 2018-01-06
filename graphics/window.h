@@ -18,7 +18,7 @@ class Window {
         GLFWwindow* GetGLFWWindow();
         void DrawWindow();
         void Update();
-        void SetColor(float a, float b, float c, float d);
+        static void SetColor(float a, float b, float c, float d);
         void Clear(GLbitfield bit_field);
         bool should_close() { return glfwWindowShouldClose(window_) != 0; }
         int width() { return  width_; }

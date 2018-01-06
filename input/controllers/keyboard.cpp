@@ -3,6 +3,7 @@
 //
 
 #include "keyboard.h"
+#include <iostream>
 
 Keyboard::Keyboard(Window* window) :
         window_(window){
@@ -11,7 +12,6 @@ Keyboard::Keyboard(Window* window) :
 }
 
 void Keyboard::KeyCallback(GLFWwindow *window, int key, int scan_code, int action, int mods) {
-
 }
 
 void Keyboard::CharacterCallback(GLFWwindow *window, unsigned int character) {
