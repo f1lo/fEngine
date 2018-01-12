@@ -6,13 +6,26 @@
 #define FENGINE_SHADER_H
 
 #include <string>
+#include <GL/glew.h>
 
 class Shader {
     public:
-        explicit Shader(std::string shader_dir);
+
+        Shader(std::string shader_dir, __uint8_t type);
         ~Shader() = default;
+        GLuint Compile();
+        inline GLuint id() { return shader_id_ ; }
+        inline __uint8_t type() { return shader_type_; }
+        inline void delete_shader() { glDeleteShader(shader_id_); }
+        inline void attach(GLuint& program_id) { glAttachShader(program_id, shader_id_); }
+
     private:
-        std::string sader_;
+
+        void ErrorHandling();
+        std::string shader_;
+        __uint8_t shader_type_;
+        GLuint shader_id_;
+        const char *src_;
 };
 
 

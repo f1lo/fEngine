@@ -3,7 +3,7 @@ project(fEngine)
 
 set(SOURCE_FILES main.cpp graphics/window.cpp graphics/window.h
         input/controllers/keyboard.cpp input/controllers/keyboard.h input/controllers/mouse.cpp input/controllers/mouse.h
-        maths/fEngine_vector.cpp maths/fEngine_vector.h vertex.cpp vertex.h coordinate.cpp coordinate.h shaders/shader.cpp shaders/shader.h includes.h)
+        maths/fEngine_vector.cpp maths/fEngine_vector.h vertex.cpp vertex.h coordinate.cpp coordinate.h shaders/shader.cpp shaders/shader.h includes.h defines.h)
 add_executable(fEngine ${SOURCE_FILES})
 
 if (APPLE)

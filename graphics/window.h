@@ -8,6 +8,7 @@
 #undef GLFW_DLL
 
 #include "../includes.h"
+#include "../defines.h"
 
 class Window {
     public:
