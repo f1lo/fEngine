@@ -10,7 +10,9 @@
 #ifdef __APPLE__
     #include </usr/local/include/GL/glew.h>
     #include </usr/local/include/GLFW/glfw3.h>
-#elif __linux__
+#endif
+
+#ifdef __linux__
     #include <GL/glew.h>
     #include <GLFW/glfw3.h>
 #endif

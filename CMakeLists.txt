@@ -10,12 +10,12 @@ if (APPLE)
     set(LIBRARIES /usr/local/lib/libglfw.3.2.dylib /usr/local/lib/libGLEW.dylib)
 endif(APPLE)
 
-if (LINUX)
+if (UNIX  AND NOT APPLE)
     set(LIBRARIES /usr/lib/x86_64-linux-gnu/libglfw.so /usr/lib/x86_64-linux-gnu/libGL.so
             /usr/lib/x86_64-linux-gnu/libGLU.so /usr/lib/x86_64-linux-gnu/libGLEW.so)
-endif(LINUX)
+endif(UNIX  AND NOT APPLE)
 
 target_link_libraries(fEngine ${LIBRARIES})
 if (APPLE)
     target_link_libraries(fEngine "-framework OpenGL")
-endif()
+endif(APPLE)
