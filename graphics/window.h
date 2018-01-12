@@ -6,8 +6,8 @@
 #define FENGINE_WINDOW_H
 
 #undef GLFW_DLL
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
+
+#include "../includes.h"
 
 class Window {
     public:

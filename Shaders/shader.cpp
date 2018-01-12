@@ -7,14 +7,14 @@
 #include <vector>
 #include <iostream>
 
-Shader::Shader(std::string shader_dir, ShaderType type) {
+Shader::Shader(std::string shader_dir) {
     std::ifstream ifs(shader_dir.c_str());
     if (ifs.fail()) {
         std::cout << "Failed to open a file!\n";
     }
     std::string str;
     ifs.seekg(0, std::ios::end);
-    str.reserve(unsigned long(ifs.tellg()));
+    str.reserve((unsigned long)ifs.tellg());
     ifs.seekg(0, std::ios::beg);
 
     str.assign((std::istreambuf_iterator<char>(ifs)),

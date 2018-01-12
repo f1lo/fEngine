@@ -9,14 +9,10 @@
 
 class Shader {
     public:
-        explicit Shader(std::string shader_dir, ShaderType type);
+        explicit Shader(std::string shader_dir);
         ~Shader() = default;
     private:
         std::string sader_;
-    enum ShaderType{
-        VERTEX_SHADER,
-        FRAGMENT_SHADER
-    };
 };
 
 

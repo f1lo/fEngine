@@ -20,7 +20,7 @@ int main() {
             Vertex(Coordinate(0.5f, -0.5f, 0))
     };
     std::string file_path = "/home/filo/CLionProjects/fEngine/Shaders/test.shader";
-    Shader* shader = new Shader(file_path);
+    //Shader* shader = new Shader(file_path, 0);
     GLuint name;
     glGenBuffers(1, &name);
     glBufferData(GL_ARRAY_BUFFER, 3 * sizeof(Vertex), triangle, GL_STATIC_DRAW);
