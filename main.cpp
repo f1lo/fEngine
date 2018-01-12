@@ -5,7 +5,7 @@
 #include "input/controllers/keyboard.h"
 #include "coordinate.h"
 #include "vertex.h"
-#include "Shaders/shader.h"
+#include "shaders/shader.h"
 
 int main() {
     glfwInit();
@@ -19,7 +19,7 @@ int main() {
             Vertex(Coordinate(0, 0.5f, 0)),
             Vertex(Coordinate(0.5f, -0.5f, 0))
     };
-    std::string file_path = "/home/filo/CLionProjects/fEngine/Shaders/test.shader";
+    std::string file_path = "/home/filo/CLionProjects/fEngine/shaders/test.shader";
     //Shader* shader = new Shader(file_path, 0);
     GLuint name;
     glGenBuffers(1, &name);
