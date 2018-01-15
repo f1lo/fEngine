@@ -7,7 +7,7 @@
 
 #include <fstream>
 #include <vector>
-#include <assert.h>
+#include <cassert>
 
 Shader::Shader(std::string shader_dir, __uint8_t type) {
     shader_type_ = type;

@@ -26,15 +26,20 @@ int main() {
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), 0);
 
-    GLuint program = glCreateProgram();
-    std::string file_path = "/home/filo/CLionProjects/fEngine/shaders/test.shader";
-    Shader shader = Shader(file_path, VERTEX_SHADER);
-    shader.Compile();
+    GLuint program;
+    program = glCreateProgram();
+    Shader vertex_shader = Shader("/home/filo/CLionProjects/fEngine/shaders/test.shader", VERTEX_SHADER);
+    Shader fragment_shader = Shader("/home/filo/CLionProjects/fEngine/shaders/test2.shader", FRAGMENT_SHADER);
+    vertex_shader.Compile();
+    fragment_shader.Compile();
     glBindAttribLocation(program, 0, "position");
-    shader.attach(program);
+    glBindAttribLocation(program, 0, "color");
+    vertex_shader.attach(program);
+    fragment_shader.attach(program);
     glLinkProgram(program);
     glValidateProgram(program);
-    shader.delete_shader();
+    vertex_shader.delete_shader();
+    fragment_shader.delete_shader();
     glUseProgram(program);
     glEnableVertexAttribArray(0);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
