@@ -24,7 +24,9 @@ class Window {
         bool should_close() { return glfwWindowShouldClose(window_) != 0; }
         int width() { return  width_; }
         int height() { return  height_; }
+
     private:
+
         int width_;
         int height_;
         const char* title_;

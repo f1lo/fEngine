@@ -7,8 +7,10 @@
 Window::Window(int width, int height, const char* title):
         width_(width),
         height_(height),
-        title_(title),
-        window_(glfwCreateWindow(width, height, title, NULL, NULL)){
+        title_(title) {
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0);
+    window_ = glfwCreateWindow(width, height, title, NULL, NULL);
     if (!window_) {
         glfwTerminate();
         std::cout << "Could not create window!\n";

@@ -7,5 +7,9 @@
 
 #endif //FENGINE_DEFINES_H
 
-#define VERTEX_SHADER 0
+#define VERTEX_SHADER   0
 #define FRAGMENT_SHADER 1
+
+#define LINE       1
+#define POLYGON    2
+#define POLYHEDRON 3
